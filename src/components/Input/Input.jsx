@@ -16,7 +16,7 @@ const Input = (props) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault() //para que no recargue la pagina al clickar en submit (previene el comportamiento por defecto del evento)
-		onNewElement({id: randomId() , label:text, done: false})
+		onNewElement({id: randomId() , label: text, done: false})
 		setText("")
 		console.log(todoElements) // BORRAR LUEGO
 

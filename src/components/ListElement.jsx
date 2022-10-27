@@ -1,15 +1,15 @@
 import React from "react";
 
 const ListElement = (props) => {
-    const {todoText} = props
+    const {t9odoElement, deleteElement} = props
     
     const handleClick = () => {
-        deleteElement()
+        deleteElement(todoElement.id)
     }
     return (
         <div>
-        <div>{todoText}</div>
-        <button onClick={handleClick} type="button" class="btn btn-outline-danger">
+        <div>{todoElement}</div>
+        <button onClick={handleClick} type="button" className="btn btn-outline-danger">
             x
         </button>
         </div>

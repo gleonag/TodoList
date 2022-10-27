@@ -8,14 +8,10 @@ const App = () => {
     const [todoList, setTodoList] = useState ([])
     const deleteElement = (elementId) => {
         const updateArray = (array, id) => {
-            array.filter((elem) => {
-                if (elem.id !== id) {
-                    return elem
-                }
-            })
-            return array
+            return array.filter((elem) => elem.id !== id) 
+            
         }
-        setTodoList(currentArray => currentArray) 
+        setTodoList(currentArray => updateArray(currentArray, elementId))
     }
     const handleNewElement = (element) =>{
         const updateFunction = current => [...current, element]
