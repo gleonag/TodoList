@@ -6,10 +6,28 @@ import List from "../components/List.jsx"
 
 const App = () => {
     const [todoList, setTodoList] = useState ([])
+    const deleteElement = (elementId) => {
+        const updateArray = (array, id) => {
+            array.filter((elem) => {
+                if (elem.id !== id) {
+                    return elem
+                }
+            })
+            return array
+        }
+        setTodoList(currentArray => currentArray) 
+    }
+    const handleNewElement = (element) =>{
+        const updateFunction = current => [...current, element]
+        setTodoList(updateFunction)
+
+
+    }
     return <div>
         <Title />
-        <Input onNewElement={(elements) => setTodoList(elements)}/>
-        <List todoElements={todoList}/>  
+        <Input onNewElement={handleNewElement}
+            />
+        <List todoElements={todoList} deleteElement={deleteElement}/>  
     </div>
 }
 export default App
